@@ -23,3 +23,24 @@ U --> RevogarAcesso
 U --> SelecionarTexto
 U --> RealizarTraducao
 @enduml
+
+
+___
+
+@startuml
+|Início|
+start
+:Usuário acessa página de upload;
+:Exibir interface de upload;
+:Usuário seleciona arquivo;
+|Fork|
+fork
+  :Validar arquivo;
+fork again
+  :Enviar arquivo para armazenamento;
+  :Armazenar arquivo;
+  :Registrar metadados do arquivo;
+end fork
+|Upload Concluído|
+end
+@enduml
